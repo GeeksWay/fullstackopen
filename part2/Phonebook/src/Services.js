@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 // Define the base URL for your API
-const baseUrl = 'http://localhost:3001/persons'; // Update this URL to your actual API endpoint
+//const baseUrl = 'http://localhost:3001/persons'; // Update this URL to your actual API endpoint
+//const baseUrl = 'http://localhost:3001/api/persons'; // Integrating the frontend with the backend
+const baseUrl = '/api/persons';
 
 const getAll = () => {
     return axios.get(baseUrl).then(response => response.data);

@@ -13,7 +13,6 @@ const Blog = require('./models/blog');
 
 // Connect to MongoDB using Mongoose
 mongoose.connect(config.MONGODB_URI, {
-
 }).then(() => {
   logger.info('Connected to MongoDB');
 }).catch((error) => {

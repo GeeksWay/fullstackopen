@@ -1,115 +1,74 @@
-/*
-const helper = require('./test_helper')
- const totalLikes = (blogs) => {
-    return blogs.reduce((sum, blog) => sum + blog.likes, 0);
-  };
-const { blogsInDb, usersInDb } = require('./test_helper');
+const Blog = require('../models/blog');
+const User = require('../models/user');
+
+jest.setTimeout(10000); // sets the timeout to 10 seconds
 
 
 const initialBlogs = [
   {
-    title: "React patterns",
-    author: "Michael Chan",
-    url: "https://reactpatterns.com/",
+    title: "Advanced React Patterns",
+    author: "Chris Doe",
+    url: "https://advancedreactpatterns.com/",
     likes: 7,
   },
   {
-    title: "Go To Statement Considered Harmful",
-    author: "Edsger W. Dijkstra",
-    url: "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+    title: "Refactoring Legacy Code",
+    author: "John Doe",
+    url: "http://example.com/refactoring-legacy-code",
     likes: 5,
   },
   {
-    title: "Canonical string reduction",
-    author: "Edsger W. Dijkstra",
-    url: "http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html",
+    title: "Efficient String Manipulation",
+    author: "Alice Johnson",
+    url: "http://example.com/efficient-string-manipulation",
     likes: 12,
   },
   {
-    title: "First class tests",
-    author: "Robert C. Martin",
-    url: "http://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.htmll",
+    title: "Effective Testing Strategies",
+    author: "Mark Smith",
+    url: "http://example.com/effective-testing-strategies",
     likes: 10,
   },
   {
-    title: "TDD harms architecture",
-    author: "Robert C. Martin",
-    url: "http://blog.cleancoder.com/uncle-bob/2017/03/03/TDD-Harms-Architecture.html",
+    title: "Challenges in TDD",
+    author: "Nancy Wilson",
+    url: "http://example.com/challenges-in-tdd",
     likes: 0,
   },
   {
-    title: "Type wars",
-    author: "Robert C. Martin",
-    url: "http://blog.cleancoder.com/uncle-bob/2016/05/01/TypeWars.html",
+    title: "Programming Paradigm Wars",
+    author: "Emma Brown",
+    url: "http://example.com/programming-paradigm-wars",
     likes: 2,
   },
   {
-    title: "Async/Await in JavaScript",
-    author: "Jane Doe",
-    url: "https://example.com/async-await",
+    title: "Mastering Async/Await in JS",
+    author: "Sarah Taylor",
+    url: "https://example.com/mastering-async-await",
     likes: 15,
   },
   {
-    title: "The Future of Web Development",
-    author: "John Smith",
-    url: "https://example.com/future-web-dev",
+    title: "Future Trends in Web Development",
+    author: "James White",
+    url: "https://example.com/future-web-trends",
     likes: 20,
   },
   {
-    title: "Machine Learning Basics",
-    author: "Alice Johnson",
-    url: "https://example.com/ml-basics",
+    title: "Introduction to Machine Learning",
+    author: "Michael Clark",
+    url: "https://example.com/intro-to-ml",
     likes: 8,
   },
   {
-    title: "Functional Programming in Python",
-    author: "Bob Wilson",
+    title: "Functional Python Programming",
+    author: "Olivia Davis",
     url: "https://example.com/functional-python",
     likes: 6,
   },
 ];
 
-const blogsInDb = async () => {
-  // Logic to populate or retrieve blogs from the database (replace with actual implementation)
-  await Blog.insertMany(initialBlogs); // Assuming Blog is your model and insertMany is for adding data
-  //const blogs = await Blog.find({});
-  return blogs;
-};
-
-const usersInDb = async () => {
-  const users = await User.find({})
-  return users.map(u => u.toJSON())
-}
-
-
-module.exports = {
- initialBlogs,
-  usersInDb,
-  blogsInDb
-}
-
-*/
-
-const Blog = require('../models/blog');
-const User = require('../models/user');
-
-const initialBlogs = [
-  {
-    title: 'First Blog',
-    author: 'Author 1',
-    url: 'http://example.com/1',
-    likes: 1
-  },
-  {
-    title: 'Second Blog',
-    author: 'Author 2',
-    url: 'http://example.com/2',
-    likes: 2
-  }
-];
-
 const nonExistingId = async () => {
-  const blog = new Blog({ title: 'willremovethissoon', author: 'willremovethissoon' });
+  const blog = new Blog({ title: 'temporaryTitle', author: 'temporaryAuthor' });
   await blog.save();
   await blog.remove();
   return blog._id.toString();

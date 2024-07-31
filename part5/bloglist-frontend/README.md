@@ -1,8 +1,12 @@
-# React + Vite
+#Blog List Application
+A full-stack blog list application that allows users to log in, create, like, and delete blog posts.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#Features
+User authentication
+Create, like, and delete blog posts
+List blogs sorted by the number of likes
+End-to-end testing with Playwright
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#Testing
+Unit Tests: Run with npm test in the frontend directories.
+End-to-End Tests: Run with npx playwright test in the e2e-tests directory.

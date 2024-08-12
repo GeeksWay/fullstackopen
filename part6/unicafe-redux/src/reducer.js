@@ -1,4 +1,4 @@
-// reducer.js
+// src/reducer.js
 
 const initialState = {
   good: 0,
@@ -6,7 +6,7 @@ const initialState = {
   bad: 0
 };
 
-const reducer = (state = initialState, action) => {
+const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GOOD':
       return { ...state, good: state.good + 1 };
@@ -21,4 +21,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default counterReducer;

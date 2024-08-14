@@ -42,10 +42,10 @@ const AnecdoteForm = () => {
   };
 
   return (
-    <div style={{ padding: '0', maxWidth: '600', margin: '0' }}>
+    <div style={{ padding: '0', maxWidth: '600px', margin: '0', }}>
       <form
         onSubmit={handleSubmit}
-        style={{ display: 'flex', alignItems: 'center', gap: '10px', textAlign: 'left' }}
+        style={{ display: 'flex', alignItems: 'center', gap: '10px', textAlign: 'left', }}
       >
         <input
           name="anecdote"
@@ -68,7 +68,7 @@ const AnecdoteForm = () => {
             cursor: 'pointer'
           }}
         >
-          Create
+            Create new
         </button>
       </form>
     </div>

@@ -44,13 +44,13 @@ const AnecdoteList = () => {
     <div style={{ padding: '0', maxWidth: '600px', margin: '0' }}>
       <h2>Anecdote List</h2>
       {sortedAnecdotes.map(anecdote => (
-        <div key={anecdote.id} style={{ marginBottom: '10px' }}>
+        <div key={anecdote.id} style={{ marginBottom: '10px', border: '1px solid #ddd',padding: '5px', margin: '0' }}>
           <div style={{ fontSize: '16px' }}>{anecdote.content}</div>
           <div style={{ fontSize: '14px', color: '#555' }}>
             has {anecdote.votes} votes
             <button
               onClick={() => handleVote(anecdote)}
-              style={{ marginLeft: '10px', padding: '3px 10px', border: 'none', borderRadius: '4px', backgroundColor: '#007bff', color: '#fff', cursor: 'pointer' }}
+              style={{ marginLeft: '10px', padding: '3px 10px', border: 'none', margin: '4px', borderRadius: '4px', backgroundColor: '#007bff', color: '#fff', cursor: 'pointer' }}
             >
               vote
             </button>

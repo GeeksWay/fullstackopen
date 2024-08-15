@@ -1,19 +1,19 @@
 // src/hooks/useField.jsx
 
-import { useState } from 'react'
+import { useState } from 'react';
 
 const useField = (type) => {
-  const [value, setValue] = useState('')
+    const [value, setValue] = useState('');
 
-  const onChange = (event) => {
-    setValue(event.target.value)
-  }
+    const onChange = (event) => {
+        setValue(event.target.value);
+    };
 
-  return {
-    type,
-    value,
-    onChange
-  }
-}
+    return {
+        type,
+        value,
+        onChange,
+    };
+};
 
-export default useField
+export default useField;
